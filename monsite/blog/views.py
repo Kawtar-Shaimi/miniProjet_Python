@@ -1,12 +1,9 @@
 from django.shortcuts import render
-
+from .models import Article
+from .models import Utilisateur
 # Create your views here.
 
 # blog/views.py
-
-from django.shortcuts import render
-from .models import Article
-from .models import Utilisateur
 
 def index(request):
     articles = Article.objects.filter(publie=True)
