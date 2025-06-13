@@ -12,5 +12,12 @@
             <li>Aucun article trouvé</li>
         {% endfor %}
     </ul>
+    <ul>
+        {% for user in utilisateurs %}
+            <li><strong>{{ user.nom }}</strong> - {{ user.prenom }} - {{ user.email }}</li>
+        {% empty %}
+            <li>Aucun utilisateur trouvé</li>
+        {% endfor %}
+    </ul>
 </body>
 </html>

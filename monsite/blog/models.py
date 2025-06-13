@@ -29,8 +29,17 @@ class Utilisateur(models.Model) :
         if len(str(self.telephone))!= 10 :
             raise ValidationError("Le numéro de telephone doit avoir 10 chiffres !")
 
-
     class Meta :
         ordering = ['nom']
         verbose_name = 'Utilisateur'
         verbose_name_plural = 'Utilisateurs'
+
+class Commentaire(models.Model) :
+    nomUser = models.CharField(max_length = 30)
+    content = models.TextField()
+    def __str__(self) :
+        return "f{self.nomUser} {self.content}"
+    class Meta :
+        ordering = ['nomUser']
+        verbose_name = 'Commentaire'
+        verbose_name_plural = 'Commentaires'

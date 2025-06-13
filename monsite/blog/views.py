@@ -6,13 +6,14 @@ from django.shortcuts import render
 
 from django.shortcuts import render
 from .models import Article
+from .models import Utilisateur
 
 def index(request):
     articles = Article.objects.filter(publie=True)
-    return render(request, 'blog/index.html', {'articles': articles})
+    utilisateurs = Utilisateur.objects.all()
+    return render(request, 'blog/index.html', {
+        'articles': articles,
+        'utilisateurs': utilisateurs,
+    })
 
 
-# from django.shortcuts import render
-
-# def index(request):
-#     return render(request, 'blog/index.html')
