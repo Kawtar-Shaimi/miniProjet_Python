@@ -43,3 +43,14 @@ class Commentaire(models.Model) :
         ordering = ['nomUser']
         verbose_name = 'Commentaire'
         verbose_name_plural = 'Commentaires'
+
+class Like(models.Model) :
+    nomUser = models.CharField()
+    nomArticle = models.CharField()
+    date_like = models.DateTimeField(auto_now_add = True)
+    def __str__(self) :
+        return f"{self.nomUser} {self.nomArticle} - {self.date_like}"
+    class Meta :
+        ordering = ['-date_like']
+        verbose_name = 'Like'
+        verbose_name_plural = 'Likes'

@@ -12,11 +12,20 @@
             <li>Aucun article trouvé</li>
         {% endfor %}
     </ul>
+    <h1>Articles publiés</h1>
     <ul>
         {% for user in utilisateurs %}
             <li><strong>{{ user.nom }}</strong> - {{ user.prenom }} - {{ user.email }}</li>
         {% empty %}
             <li>Aucun utilisateur trouvé</li>
+        {% endfor %}
+    </ul>
+    <h1>Article Likés</h1>
+    <ul>
+        {% for like in likes %}
+            <li><strong>{{ like.nomUser }}</strong> - {{ like.nomArticle }} - {{ like.date_like }}</li>
+        {% empty %}
+            <li>Aucun Like trouvé</li>
         {% endfor %}
     </ul>
 </body>
